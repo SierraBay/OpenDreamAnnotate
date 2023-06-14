@@ -1,0 +1,14 @@
+{
+  "name": "opendreamannotate",
+  "version": "1.0.0",
+  "description": "Parse and annotate the output of OpenDream compiler",
+  "main": "dist/index.js",
+  "private": true,
+  "author": "SuhEugene",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@types/node": "^20.3.1",
+    "typescript": "^5.1.3"
+  }
+}
