@@ -4,7 +4,7 @@ import * as core from "@actions/core"
 
 export interface Match {
   type: "Error" | "Warning",
-  filename: string,
+  path: string,
   code: string,
   line: string,
   column: string,
@@ -20,6 +20,6 @@ try {
   const matches = Array.from(data.matchAll(regex), m => m.groups) as unknown as Match[];
 
   for(const match of matches)
-    process.stdout.write(`::${match.type.toLowerCase()} file=${match.filename},line=${match.line},col=${match.column}::${match.code} - ${match.message}${os.EOL}`);
+    process.stdout.write(`::${match.type.toLowerCase()} file=${match.path},line=${match.line},col=${match.column}::${match.code} - ${match.message}${os.EOL}`);
 
 } catch (error: any) { core.setFailed(error.message); }
